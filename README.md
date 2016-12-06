@@ -18,3 +18,9 @@ alice (pass: alice) (spectator account)
 company (pass:company) (company account)
 
 Use them as login tests if you don't feel like creating more users.
+
+#Example Screenshot 1:
+![Screenshot 1](http://i.imgur.com/CuRelhg.png)
+
+#Example Screenshot 2:
+![Screenshot 1](http://i.imgur.com/N8nb1w2.png)
