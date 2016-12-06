@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 08:25 AM
+-- Generation Time: Dec 06, 2016 at 11:54 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -87,7 +87,8 @@ INSERT INTO `game` (`g_id`, `release_date`, `developer`, `title`) VALUES
 (4, '2001-11-21', 'Nintendo', 'Super Smash Bros. Melee'),
 (5, '2015-10-27', '343 Industries', 'Halo 5'),
 (6, '2013-07-09', 'Valve Corporation', 'Dota 2'),
-(7, '2015-05-28', 'Nintendo', 'Splatoon');
+(7, '2015-05-28', 'Nintendo', 'Splatoon'),
+(8, '2016-03-18', 'Nintendo', 'Pokken Tournament');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,11 @@ CREATE TABLE `gameuse` (
 --
 
 INSERT INTO `gameuse` (`g_id`, `t_id`) VALUES
-(6, 6);
+(2, 1),
+(4, 8),
+(6, 6),
+(6, 7),
+(8, 8);
 
 -- --------------------------------------------------------
 
@@ -177,7 +182,9 @@ INSERT INTO `tournament` (`T_id`, `location`, `t_name`, `organizer`, `start_date
 (3, 'Austin, TX', 'Headhunter', 'AHWU', '2016-11-23'),
 (4, 'Cube', 'Conquest', 'Gaming League', '2016-11-23'),
 (5, 'Austin, TX', 'RvB', 'RT', '2016-11-23'),
-(6, 'Los Angeles, CA', 'The Summit 6', 'Beyond the Summit', '2016-11-16');
+(6, 'Los Angeles, CA', 'The Summit 6', 'Beyond the Summit', '2016-11-16'),
+(7, 'Boston, MA', 'The Boston Major 2016', 'PGL', '2016-12-03'),
+(8, 'Las Vegas, NV', 'EVO 2016', 'Shoryuken', '2016-07-15');
 
 -- --------------------------------------------------------
 
@@ -222,7 +229,8 @@ INSERT INTO `user` (`u_id`, `email`, `u_name`, `u_psswrd`, `u_type`) VALUES
 (2, 'arteezy@evilgeniuses.gg', 'Arteezy', '2ez4rtz', 1),
 (3, 'monster@monsterbevcorp.com', 'MonsterEnergy', 'Unleash', 2),
 (4, 'myemail', 'myname', '2d90985d02f66ae63193fd77695728b3', 0),
-(5, 'alice@example.com', 'alice', '826a87a35b03a2fc9b725e84868d9c7d', 0);
+(5, 'alice@example.com', 'alice', '826a87a35b03a2fc9b725e84868d9c7d', 0),
+(6, 'company@company.com', 'company', 'cf0cb2b1f0d508f07ccd3c38da440e27', 2);
 
 -- --------------------------------------------------------
 
@@ -378,7 +386,7 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `game`
 --
 ALTER TABLE `game`
-  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `player`
 --
@@ -393,7 +401,7 @@ ALTER TABLE `p_sponsorship`
 -- AUTO_INCREMENT for table `tournament`
 --
 ALTER TABLE `tournament`
-  MODIFY `T_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `T_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `t_sponsorship`
 --
@@ -403,7 +411,7 @@ ALTER TABLE `t_sponsorship`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
