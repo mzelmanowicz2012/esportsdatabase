@@ -52,7 +52,7 @@ _END;
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
     $token = hash('ripemd128',$pass);
-    $utype = '0';
+    $utype = sanitizeString($_POST['u_type']);
 
     if ($user == "" || $pass == "")
       $error = "Not all fields were entered<br><br>";
@@ -80,6 +80,10 @@ echo <<<_END
             <span class='fieldname'>Password</span><input type='password' maxlength='16' name='pass' value='$pass' required><br>
             <span class='fieldname'>Email</span><input type='email' maxlength='256' name='email' value='$email' required>
             <br>
+            <span class='fieldname'>Account Type:</span>
+            <label for="spectator">Spectator</label><input type='radio' name='u_type' id='spectator' value='0' checked='checked'>
+            <label for="player">Player</label><input type='radio' name='u_type' id='player' value='1'>
+            <label for="company">Company</label><input type='radio' name='u_type' id='company' value='2'><br>
             <input type='submit' value='Sign up'>
         </form>
     </div>
