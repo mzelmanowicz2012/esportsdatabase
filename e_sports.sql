@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2016 at 11:54 PM
+-- Generation Time: Dec 07, 2016 at 04:37 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -14,7 +14,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `e_sports`
@@ -61,7 +60,8 @@ CREATE TABLE `competes_in` (
 --
 
 INSERT INTO `competes_in` (`p_id`, `t_id`) VALUES
-(8, 6);
+(8, 6),
+(8, 7);
 
 -- --------------------------------------------------------
 
@@ -123,21 +123,22 @@ CREATE TABLE `player` (
   `u_id` int(11) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `p_Fname` varchar(256) DEFAULT NULL,
-  `P_Lname` varchar(256) DEFAULT NULL
+  `P_Lname` varchar(256) DEFAULT NULL,
+  `p_Uname` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `player`
 --
 
-INSERT INTO `player` (`p_id`, `u_id`, `age`, `p_Fname`, `P_Lname`) VALUES
-(1, NULL, 22, 'Matt', 'Fowl'),
-(2, NULL, 23, 'Matt', 'Zel'),
-(3, NULL, 27, 'Jamari', 'Daniel'),
-(4, NULL, 26, 'Devin', 'Clark'),
-(6, NULL, 22, 'Ashis', 'Mohanty'),
-(7, NULL, 25, 'Peter', 'Dager'),
-(8, 2, 20, 'Artour', 'Babaev');
+INSERT INTO `player` (`p_id`, `u_id`, `age`, `p_Fname`, `P_Lname`, `p_Uname`) VALUES
+(1, NULL, 22, 'Matt', 'Fowl', 'Owl'),
+(2, NULL, 23, 'Matt', 'Zel', 'CC'),
+(3, NULL, 27, 'Jamari', 'Dan', 'Jam'),
+(4, NULL, 26, 'Devin', 'Cla', 'Pim'),
+(6, NULL, 22, 'Ashis', 'Mohanty', 'Rooney'),
+(7, NULL, 25, 'Peter', 'Dager', 'PPD'),
+(8, 2, 20, 'Artour', 'Babaev', 'Arteezy');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,8 @@ CREATE TABLE `p_sponsorship` (
 --
 
 INSERT INTO `p_sponsorship` (`sponsor_id`, `p_id`, `comp_id`) VALUES
-(1, 7, 6);
+(1, 7, 6),
+(2, 8, 7);
 
 -- --------------------------------------------------------
 
@@ -225,9 +227,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`u_id`, `email`, `u_name`, `u_psswrd`, `u_type`) VALUES
-(1, 'test1@fau.edu', 'test1', 'test', 0),
-(2, 'arteezy@evilgeniuses.gg', 'Arteezy', '2ez4rtz', 1),
-(3, 'monster@monsterbevcorp.com', 'MonsterEnergy', 'Unleash', 2),
+(1, 'test1@fau.edu', 'test1', '2d90985d02f66ae63193fd77695728b3', 0),
+(2, 'arteezy@evilgeniuses.gg', 'Arteezy', '2d90985d02f66ae63193fd77695728b3', 1),
+(3, 'monster@monsterbevcorp.com', 'MonsterEnergy', '2d90985d02f66ae63193fd77695728b3', 2),
 (4, 'myemail', 'myname', '2d90985d02f66ae63193fd77695728b3', 0),
 (5, 'alice@example.com', 'alice', '826a87a35b03a2fc9b725e84868d9c7d', 0),
 (6, 'company@company.com', 'company', 'cf0cb2b1f0d508f07ccd3c38da440e27', 2);
@@ -396,7 +398,7 @@ ALTER TABLE `player`
 -- AUTO_INCREMENT for table `p_sponsorship`
 --
 ALTER TABLE `p_sponsorship`
-  MODIFY `sponsor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sponsor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tournament`
 --

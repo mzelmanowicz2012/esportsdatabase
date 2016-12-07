@@ -4,7 +4,11 @@
   if ($loggedin)
   {
       
-      echo "INDEX PAGE WHEN LOGGED IN IS HERE!";
+      echo "<br>
+<div>
+    <h3>Welcome to $appname!</h3>
+    <p>$appname is a place where you can keep track of eSports tournamants, players, and more!</p>
+</div>";
             require_once 'footer.php';
             die();
   }
@@ -13,7 +17,7 @@
       echo "<br>
 <div>
     <h3>Welcome to $appname!</h3>
-    <p>$appname is a place where you can track and follow eSports tournamants, players, and more!</p>
+    <p>$appname is a place where you can keep track of eSports tournamants, players, and more!</p>
 </div>
 <div>
     <br>
